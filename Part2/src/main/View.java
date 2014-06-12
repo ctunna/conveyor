@@ -4,6 +4,14 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
+
+/**
+ * View class in MVC pattern.
+ * 
+ * 
+ * @author carson
+ *
+ */
 class View extends JFrame {
 	// ... Components
 	private JTextField machine_time = new JTextField(15);
