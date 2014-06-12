@@ -1,9 +1,7 @@
 package main;
 
 import java.awt.*;
-
 import javax.swing.*;
-
 import java.awt.event.*;
 
 class View extends JFrame {
@@ -42,11 +40,6 @@ class View extends JFrame {
 		content.add(new JLabel("Status:"));
 		content.add(status);
 		content.add(resetBtn);
-		// content.add(m_userInputTf);
-		// content.add(m_multiplyBtn);
-		// content.add(new JLabel("Total"));
-		// content.add(m_totalTf);
-		// content.add(m_clearBtn);
 
 		// ... finalize layout
 		this.setContentPane(content);
@@ -56,10 +49,6 @@ class View extends JFrame {
 		// The window closing event should probably be passed to the
 		// Controller in a real program, but this is a short example.
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-
-	void reset() {
-		// m_totalTf.setText(INITIAL_VALUE);
 	}
 
 	void setStatus(String s){
