@@ -1,6 +1,6 @@
 package main;
 /**
- * Self explanatory states that could be added extended.
+ * Self explanatory states that could be extended.
  * 
  */
 public enum Status {
