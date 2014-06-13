@@ -3,7 +3,7 @@ package main;
 /**
  * Main method for MVC pattern.
  * 
- * @author carson
+ * @author Carson Tunna
  *
  */
 public class ConveyorMonitor {

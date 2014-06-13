@@ -7,7 +7,7 @@ import javax.swing.Timer;
 /**
  * Controller in MVC pattern
  * 
- * @author carson
+ * @author Carson Tunna
  * 
  */
 public class Controller {
@@ -21,7 +21,11 @@ public class Controller {
 	 * @param model
 	 * @param view
 	 */
-	Controller(Model model, View view) {
+	public Controller(Model model, View view) {
+		if(model == null || view == null){
+			throw new NullPointerException("Constructor passed null pointer");
+		}
+	
 		m_model = model;
 		m_view = view;
 		ti = new Timer(1000, new DataListener());
@@ -32,10 +36,8 @@ public class Controller {
 	}
 
 	/**
-	 * Data listener calls actionPerformed every time Timer ti ticks. This sets
+	 * Data listener calls actionPerformed every time ti ticks. This sets
 	 * the values in the UI to the most up to date data from the conveyor.
-	 * 
-	 * @author carson
 	 * 
 	 */
 	class DataListener implements ActionListener {
@@ -61,9 +63,7 @@ public class Controller {
 	}
 
 	/**
-	 * Listens for reset button click. 
-	 * 
-	 * @author carson
+	 * Listens for reset button click.
 	 * 
 	 */
 	class ResetListener implements ActionListener {

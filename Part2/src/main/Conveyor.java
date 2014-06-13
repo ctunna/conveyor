@@ -5,16 +5,18 @@ import java.util.Random;
 import java.sql.Timestamp;
 
 /**
- * This class represents a virtual Conveyor belt that generates ConveyorData.
+ * This class represents a virtual conveyor belt that generates ConveyorData.
  * 
- * @author carson
+ * @author Carson Tunna
  * 
  */
 public class Conveyor {
 	private ConveyorData data;
+	private Random rand;
 
 	public Conveyor() {
 		data = new ConveyorData();
+		rand = new Random(new Date().getTime());
 		data.setStatus(getStatusString(Status.NORMAL));
 		data.setTotal_weight(0);
 		data.setTstamp(new Timestamp(new Date().getTime()));
@@ -27,9 +29,8 @@ public class Conveyor {
 	 * Adds small amount to total_weight Updates timestamp Assigns random status
 	 */
 	private void update() {
-		Random rand = new Random(new Date().getTime());
-		data.setTotal_weight(data.getTotal_weight()
-				+ (100.0d + ((500.0d - 100.0d) * rand.nextDouble())));
+		data.setTotal_weight((100.0d + ((500.0d - 100.0d) * rand.nextDouble()))
+				+ data.getTotal_weight());
 		data.setTstamp((new Timestamp(new Date().getTime())));
 		data.setStatus(getStatusString(Status.values()[rand.nextInt(Status
 				.values().length)]));
@@ -42,6 +43,11 @@ public class Conveyor {
 	 */
 	public ConveyorData getData() {
 		update();
+		
+		if(data == null){
+			throw new NullPointerException("Null ConveyorData object");
+		}
+		
 		return data;
 	}
 

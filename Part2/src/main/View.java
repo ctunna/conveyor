@@ -9,9 +9,10 @@ import java.awt.event.*;
  * View class in MVC pattern.
  * 
  * 
- * @author carson
+ * @author Carson Tunna
  *
  */
+@SuppressWarnings("serial")
 class View extends JFrame {
 	// ... Components
 	private JTextField machine_time = new JTextField(15);
@@ -26,6 +27,10 @@ class View extends JFrame {
 	// ======================================================= constructor
 	/** Constructor */
 	View(Model model) {
+		if(model == null){
+			throw new NullPointerException("null reference to model");
+		}
+		
 		// ... Set up the logic
 		m_model = model;
 
@@ -54,8 +59,7 @@ class View extends JFrame {
 		this.pack();
 
 		this.setTitle("Conveyor Monitor");
-		// The window closing event should probably be passed to the
-		// Controller in a real program, but this is a short example.
+
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 

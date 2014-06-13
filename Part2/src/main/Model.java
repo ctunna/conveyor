@@ -11,7 +11,7 @@ import javax.swing.Timer;
  * fields.
  * 
  * 
- * @author carson
+ * @author Carson Tunna
  * 
  */
 public class Model {

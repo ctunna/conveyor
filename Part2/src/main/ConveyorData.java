@@ -7,7 +7,7 @@ import java.sql.Timestamp;
  * socket.
  * 
  * 
- * @author carson
+ * @author Carson Tunna
  * 
  */
 public class ConveyorData implements java.io.Serializable {
